@@ -1,0 +1,202 @@
+:root {
+  color-scheme: light;
+  color: #1e293b;
+  background: #f7f8fb;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(180deg, #f9fafb 0%, #eef2f7 100%);
+}
+
+.app-shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 24px 48px;
+}
+
+.hero {
+  margin-bottom: 24px;
+  padding: 28px 28px 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #2563eb;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  line-height: 1.02;
+}
+
+.hero-copy {
+  margin: 18px 0 0;
+  max-width: 620px;
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.weather-form {
+  display: grid;
+  gap: 18px;
+}
+
+.field-group {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 16px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 18px;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.status-message {
+  margin: 14px 0 0;
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.status-message.error {
+  color: #b91c1c;
+}
+
+.hidden {
+  display: none;
+}
+
+.result-card {
+  padding: 28px;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.result-location {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.result-condition {
+  margin: 10px 0 0;
+  font-size: 1.3rem;
+  color: #475569;
+}
+
+.weather-icon {
+  width: 88px;
+  height: 88px;
+}
+
+.weather-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.stat-item {
+  padding: 18px;
+  background: #f8fafc;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.stat-item strong {
+  font-size: 1.2rem;
+  color: #0f172a;
+}
+
+@media (max-width: 680px) {
+  .app-shell {
+    padding: 24px 16px 32px;
+  }
+
+  .result-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .weather-stats {
+    grid-template-columns: 1fr;
+  }
+}

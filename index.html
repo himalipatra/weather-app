@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WEATHERLY</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Live weather lookup</p>
+        <h1>WEATHERLY</h1>
+        <p class="hero-copy">Search any city and country to view current conditions, temperature, humidity, and wind speed.</p>
+      </div>
+    </header>
+
+    <section class="card input-card">
+      <form id="weather-form" class="weather-form" autocomplete="off">
+        <div class="field-group">
+          <label for="city-input">City</label>
+          <input id="city-input" name="city" type="text" placeholder="Sydney" required />
+        </div>
+        <div class="field-group">
+          <label for="country-input">Country code</label>
+          <input id="country-input" name="country" type="text" placeholder="AU" maxlength="2" required />
+        </div>
+        <button type="submit">Get Weather</button>
+      </form>
+      <p id="status-message" class="status-message" aria-live="polite"></p>
+    </section>
+
+    <section id="result-section" class="card result-card hidden">
+      <div class="result-header">
+        <div>
+          <p class="result-location" id="location-name"></p>
+          <p class="result-condition" id="condition-text"></p>
+        </div>
+        <img id="weather-icon" class="weather-icon" src="" alt="" />
+      </div>
+      <div class="weather-stats">
+        <div class="stat-item">
+          <span class="stat-label">Temperature</span>
+          <strong id="temperature-value"></strong>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Humidity</span>
+          <strong id="humidity-value"></strong>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Wind</span>
+          <strong id="wind-value"></strong>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
