@@ -10,19 +10,25 @@ WEATHERLY is a minimalist static weather lookup app built with HTML, CSS, and va
 
 ## Setup
 
-1. Copy the repository to your local machine.
-2. Open `script.js` and replace `YOUR_OPENWEATHERMAP_API_KEY` with your OpenWeatherMap API key.
-3. Open `index.html` directly in your browser, or serve the folder with a simple static server.
+1. Clone or download the repository.
+2. Open `index.html` directly in your browser, or serve the folder with a simple static server.
+3. When you open the app, you'll see a form to enter your OpenWeatherMap API key, city, and country code.
 
-## Adding the API key
+## Getting an API Key
 
-In `script.js`, set:
+1. Visit [openweathermap.org](https://openweathermap.org/api)
+2. Sign up for a free account (if you don't have one)
+3. Navigate to your API keys page
+4. Copy your default API key
+5. Paste it into the "OpenWeatherMap API Key" field in the WEATHERLY app
 
-```js
-const API_KEY = "YOUR_OPENWEATHERMAP_API_KEY";
-```
+## How to Use
 
-Replace the placeholder with your actual key. Because GitHub Pages is a static host, the API key cannot be hidden on the client side.
+1. Paste your OpenWeatherMap API key into the first field
+2. Enter the city name (e.g., "Sydney")
+3. Enter the country code (e.g., "AU")
+4. Click "Get Weather"
+5. Current conditions, temperature, humidity, and wind speed will appear
 
 ## Deployment to GitHub Pages
 
@@ -32,4 +38,4 @@ Replace the placeholder with your actual key. Because GitHub Pages is a static h
 
 ## Security note
 
-Keep your API key out of the repository. For GitHub Pages, use a free-tier key with domain restrictions if possible, and do not commit private keys to source control.
+The API key is entered by the user in the browser and never stored—it is only used to fetch weather data from OpenWeatherMap. Your key is not sent to any third party or stored in the repository.

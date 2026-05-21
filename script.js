@@ -1,7 +1,7 @@
-const API_KEY = "YOUR_OPENWEATHERMAP_API_KEY";
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
 const form = document.getElementById("weather-form");
+const apiKeyInput = document.getElementById("api-key-input");
 const cityInput = document.getElementById("city-input");
 const countryInput = document.getElementById("country-input");
 const statusMessage = document.getElementById("status-message");
@@ -37,13 +37,13 @@ function clearResult() {
   resultSection.classList.add("hidden");
 }
 
-async function fetchWeather(city, country) {
-  if (!API_KEY || API_KEY.includes("YOUR_OPENWEATHERMAP_API_KEY")) {
-    throw new Error("Please add your OpenWeatherMap API key to script.js before using WEATHERLY.");
+async function fetchWeather(city, country, apiKey) {
+  if (!apiKey) {
+    throw new Error("Please enter your OpenWeatherMap API key.");
   }
 
   const query = `${city.trim()},${country.trim()}`;
-  const url = `${BASE_URL}?q=${encodeURIComponent(query)}&units=metric&appid=${API_KEY}`;
+  const url = `${BASE_URL}?q=${encodeURIComponent(query)}&units=metric&appid=${apiKey}`;
   const response = await fetch(url);
 
   if (!response.ok) {
@@ -57,11 +57,12 @@ async function fetchWeather(city, country) {
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
+  const apiKey = apiKeyInput.value.trim();
   const city = cityInput.value.trim();
   const country = countryInput.value.trim();
 
-  if (!city || !country) {
-    setStatus("Please enter both a city and country code.", "error");
+  if (!apiKey || !city || !country) {
+    setStatus("Please enter your API key, city, and country code.", "error");
     clearResult();
     return;
   }
@@ -70,7 +71,7 @@ form.addEventListener("submit", async (event) => {
   clearResult();
 
   try {
-    const weatherData = await fetchWeather(city, country);
+    const weatherData = await fetchWeather(city, country, apiKey);
     showResult(weatherData);
     setStatus("Current weather retrieved successfully.");
   } catch (error) {
